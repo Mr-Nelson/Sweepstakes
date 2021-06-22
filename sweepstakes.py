@@ -5,19 +5,22 @@ from contestant import Contestant
 
 class Sweepstakes:
 
+
     def __init__(self, name):
         self.sweepstakes_name = name
         self.contestants = {}
 
-    def register_contestant(self, user_input):
-        contestant = Contestant()
-        self.contestants.update(contestant.contestant_first_name)
-        self.contestants.update(contestant.contestant_last_name)
-        self.contestants.update(contestant.contestant_email)
-        self.contestants.update(contestant.add_registration_number())
+
+    def register_contestant(self, contestant):
+        self.contestants.update(self.get_registration_number(contestant))
+
+    def get_registration_number(self, contestant):
+        contestant.contestant_registration_number = 10000
+        for contestant in self.contestants:
+            self.contestant_registration_number += 1
 
     def pick_winner(self):
-        is_winner = random.choice(self.contestants)
+        is_winner = random.randint(self.contestants)
 
     def view_contestants(self):
         return self.contestants
