@@ -1,4 +1,4 @@
-from user_interface import User_Interface
+import user_interface
 
-user_interface = User_Interface()
-pass
+
+user_interface.display_message()
