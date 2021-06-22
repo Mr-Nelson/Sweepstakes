@@ -1,6 +1,6 @@
 import random
-import contestant
 import user_interface
+from contestant import Contestant
 
 
 class Sweepstakes:
@@ -10,6 +10,7 @@ class Sweepstakes:
         self.contestants = {}
 
     def register_contestant(self, user_input):
+        contestant = Contestant()
         self.contestants.update(contestant.contestant_first_name)
         self.contestants.update(contestant.contestant_last_name)
         self.contestants.update(contestant.contestant_email)

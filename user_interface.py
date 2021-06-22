@@ -1,9 +1,11 @@
-import marketing_firm
-import sweepstakes
+from sweepstakes import Sweepstakes
 from contestant import Contestant
 from marketing_firm import Marketing_Firm
 
 
+contestant = Contestant()
+marketing_firm = Marketing_Firm()
+sweepstakes = Sweepstakes()
 
 @staticmethod()
     def display_message():
@@ -35,9 +37,9 @@ from marketing_firm import Marketing_Firm
 
 @staticmethod()
     def display_contestant_info(contestant):
-        print(f"There are {len(sweepstakes.Sweepstakes.contestants)}.")
-        for each_contestant in sweepstakes.Sweepstakes.view_contestants:
-            print(f"{Contestant.contestant_first_name} {Contestant.contestant_last_name}, {Contestant.contestant_email}, {Contestant.contestant_registration_number}")
+        print(f"There are {len(sweepstakes.contestants)}.")
+        for each_contestant in sweepstakes.view_contestants():
+            print(f"{contestant.contestant_first_name} {contestant.contestant_last_name}, {contestant.contestant_email}, {contestant.contestant_registration_number}")
 
 @staticmethod()
     def display_sweepstakes_info(sweepstakes):
@@ -47,7 +49,7 @@ from marketing_firm import Marketing_Firm
 @staticmethod()
     def display_sweepstakes_selection_menu(all_sweepstakes):
         print(f"Sweepstakes menu:")
-        print(f"{sweepstakes.Sweepstakes.menu}")
+        print(f"{sweepstakes.menu}")
         return display_sweepstakes_menu_options()
 
 @staticmethod()
@@ -58,11 +60,11 @@ from marketing_firm import Marketing_Firm
         print("Enter -3- to select a sweepstakes. ")
         user_selection = get_user_input_number(prompt=input("Please enter a number here:"))
         if user_selection == 1:
-            return marketing_firm.Marketing_Firm.create_sweepstakes()
+            return marketing_firm.create_sweepstakes()
         elif user_selection == 2:
-            return marketing_firm.Marketing_Firm.change_marketing_firm_name()
+            return marketing_firm.change_marketing_firm_name()
         elif user_selection == 3:
-            return marketing_firm.Marketing_Firm.select_sweepstakes()
+            return marketing_firm.select_sweepstakes()
         else:
             print("Please choose a number.")
             return display_message()
@@ -70,17 +72,17 @@ from marketing_firm import Marketing_Firm
 
 @staticmethod()
     def display_sweepstakes_menu_options(sweepstakes_name):
-        print(f"{sweepstakes.Sweepstakes} menu:")
+        print(f"{sweepstakes} menu:")
         print("Enter -1- to register a contestant.")
         print("Enter -2- to view contestants. ")
         print("Enter -3- to select a winner. ")
         user_selection = get_user_input_number(prompt=input("Please enter a number here:"))
         if user_selection == 1:
-            return sweepstakes.Sweepstakes.register_contestant()
+            return sweepstakes.register_contestant()
         elif user_selection == 2:
-            return sweepstakes.Sweepstakes.view_contestants()
+            return sweepstakes.view_contestants()
         elif user_selection == 3:
-            return sweepstakes.Sweepstakes.pick_winner()
+            return sweepstakes.pick_winner()
         else:
             print("Please choose a number.")
             return display_message()

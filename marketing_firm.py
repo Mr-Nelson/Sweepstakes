@@ -7,9 +7,9 @@ class Marketing_Firm:
     def __init__(self, name):
         self.marketing_firm_name = name
         self.sweepstakes_storage = []
-        sweepstakes = Sweepstakes()
 
     def create_sweepstakes(self):
+        sweepstakes = Sweepstakes()
         self.sweepstakes_storage.append(user_interface.get_user_input_string())
 
     def change_marketing_firm_name(self):
