@@ -8,7 +8,6 @@ class Marketing_Firm:
         self.marketing_firm_name = name
         self.sweepstakes_storage = []
 
-    marketing_firm_name = input("Please enter Marketing Firm's name.")
 
     def create_sweepstakes(self):
         sweepstakes = Sweepstakes()
@@ -18,7 +17,6 @@ class Marketing_Firm:
         self.marketing_firm_name = user_interface.get_user_input_string()
 
     def select_sweepstakes(self):
-        print(self.sweepstakes_storage)
         chosen_sweepstakes = user_interface.get_user_input_number()
         return chosen_sweepstakes
 

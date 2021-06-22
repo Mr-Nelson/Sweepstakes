@@ -42,13 +42,14 @@ def display_sweepstakes_info(sweepstakes):
 
 def display_sweepstakes_selection_menu(sweepstakes_storage):
     print("Sweepstakes menu:")
-    print(f"{Marketing_Firm.sweepstakes_storage}")
+    print(f"{marketing_firm.sweepstakes_storage}")
     sweepstakes_name = input("Please enter sweepstakes name.")
     return display_sweepstakes_menu_options(sweepstakes_name)
 
 
 def display_marketing_firm_menu_options(marketing_firm_name):
-    print(f"{Marketing_Firm} menu:")
+    marketing_firm_name = input("Please enter Marketing Firm's name.")
+    print(f"{marketing_firm_name} menu:")
     print("Enter -1- to create a sweepstakes.")
     print("Enter -2- to change the marketing firm name. ")
     print("Enter -3- to select a sweepstakes. ")
@@ -58,6 +59,7 @@ def display_marketing_firm_menu_options(marketing_firm_name):
     elif user_selection == 2:
         return marketing_firm.change_marketing_firm_name()
     elif user_selection == 3:
+        print(marketing_firm.sweepstakes_storage)
         return marketing_firm.select_sweepstakes()
 
 
