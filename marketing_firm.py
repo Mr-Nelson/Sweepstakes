@@ -1,8 +1,8 @@
-import user_interface
+from user_interface import UserInterface
 from sweepstakes import Sweepstakes
 
 
-class Marketing_Firm:
+class MarketingFirm:
 
     def __init__(self, name):
         self.marketing_firm_name = name
@@ -10,14 +10,13 @@ class Marketing_Firm:
 
 
     def create_sweepstakes(self):
-        sweepstakes = Sweepstakes()
-        self.sweepstakes_storage.append(user_interface.get_user_input_string())
+        self.sweepstakes_storage.append(UserInterface.get_user_input_string())
 
     def change_marketing_firm_name(self):
-        self.marketing_firm_name = user_interface.get_user_input_string()
+        self.marketing_firm_name = UserInterface.get_user_input_string()
 
     def select_sweepstakes(self):
-        chosen_sweepstakes = user_interface.get_user_input_number()
+        chosen_sweepstakes = UserInterface.get_user_input_number()
         return chosen_sweepstakes
 
     def menu(self):

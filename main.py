@@ -1,5 +1,4 @@
-import user_interface
-from sweepstakes import Sweepstakes
-from marketing_firm import Marketing_Firm
+from user_interface import UserInterface
 
+user_interface = UserInterface
 user_interface.display_message()
