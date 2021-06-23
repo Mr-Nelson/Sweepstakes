@@ -1,14 +1,15 @@
 import random
-from user_interface import UserInterface
 from contestant import Contestant
+from user_interface import UserInterface
+
 
 class Sweepstakes:
-
 
     def __init__(self, name):
         self.sweepstakes_name = name
         self.contestants = {}
-        contestant = Contestant()
+
+    contestant = Contestant()
 
     def register_contestant(self, contestant):
         self.contestants.update(self.get_registration_number(contestant))
@@ -20,12 +21,17 @@ class Sweepstakes:
 
     def pick_winner(self):
         is_winner = random.randint(self.contestants)
+        Contestant.notify()
         return is_winner
 
     def view_contestants(self):
-        return self.contestants
+        return UserInterface.display_contestant_info()
 
     def menu(self):
-        self.register_contestant()
-        self.view_contestants()
-        self.pick_winner()
+        user_selection = UserInterface.get_user_input_number("Please make a selection.")
+        if user_selection == 1:
+            self.register_contestant()
+        elif user_selection == 2:
+            self.view_contestants()
+        elif user_selection == 3:
+            self.pick_winner()
