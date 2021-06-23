@@ -12,6 +12,9 @@ class Sweepstakes:
     contestant = Contestant()
 
     def register_contestant(self, contestant):
+        contestant.contestant_first_name = UserInterface.get_user_input_string("Please enter first name.")
+        contestant.contestant_last_name = UserInterface.get_user_input_string("Please enter last name.")
+        contestant.contestant_email = UserInterface.get_user_input_string("Please enter email address.")
         self.contestants.update(self.get_registration_number(contestant))
 
     def get_registration_number(self, contestant):

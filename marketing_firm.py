@@ -3,8 +3,8 @@ from user_interface import UserInterface
 
 class MarketingFirm:
 
-    def __init__(self, name=UserInterface.get_user_input_string("Please enter Marketing Firm's name.")):
-        self.marketing_firm_name = name
+    def __init__(self, name):
+        self.marketing_firm_name = UserInterface.get_user_input_string("Please enter Marketing Firm's name.")
         self.sweepstakes_storage = []
 
     def change_marketing_firm_name(self):
