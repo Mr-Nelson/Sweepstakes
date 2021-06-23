@@ -3,11 +3,6 @@ class UserInterface:
     @staticmethod
     def display_message(message):
         print(message)
-        user_selection = UserInterface.get_user_input_number("Please enter your selection here:")
-        if user_selection == 1:
-            UserInterface.display_marketing_firm_menu_options()
-        elif user_selection == 2:
-            UserInterface.display_sweepstakes_selection_menu()
 
     @staticmethod
     def get_user_input_string(prompt):
@@ -51,7 +46,8 @@ class UserInterface:
     @staticmethod
     def display_sweepstakes_menu_options(sweepstakes):
         print(f"{sweepstakes.sweepstakes_name} menu:")
-        print(f"{UserInterface.display_sweepstakes_info(sweepstakes.sweepstakes_name, sweepstakes.contestants)}")
+        print(f"{UserInterface.display_sweepstakes_info()}")
         print("Enter -1- to register a contestant.")
         print("Enter -2- to view contestants. ")
         print("Enter -3- to select a winner. ")
+

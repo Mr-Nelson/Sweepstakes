@@ -31,6 +31,7 @@ class Sweepstakes:
         return UserInterface.display_contestant_info()
 
     def menu(self):
+        UserInterface.display_sweepstakes_menu_options(MarketingFirm.select_sweepstakes(self))
         user_selection = UserInterface.get_user_input_number("Please make a selection.")
         if user_selection == 1:
             self.register_contestant()
