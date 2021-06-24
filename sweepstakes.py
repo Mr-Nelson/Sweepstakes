@@ -16,6 +16,7 @@ class Sweepstakes:
         contestant.contestant_last_name = UserInterface.get_user_input_string("Please enter last name.")
         contestant.contestant_email = UserInterface.get_user_input_string("Please enter email address.")
         contestant.contestant_registration_number = (self.get_registration_number(contestant))
+        self.contestants.update(contestant)
         return self.menu(self)
 
     def get_registration_number(self, contestant):
@@ -25,15 +26,12 @@ class Sweepstakes:
 
     def pick_winner(self):
         is_winner = random.randint(self.contestants)
-        Contestant.notify()
-        return is_winner
-        return self.menu
+        Contestant.notify(is_winner)
+        return self.menu(self)
 
     def view_contestants(self):
-        return UserInterface.display_contestant_info(self.contestants)
-        for contestant in contestants:
-            print(f"{contestant.contestant_first_name} {contestant.contestant_last_name}, {contestant.contestant_email}, {contestant.contestant_registration_number()}")
-        return self.menu
+        UserInterface.display_contestant_info(self.contestants)
+        return self.menu(self)
 
     def menu(self, sweepstakes_name):
         contestant = Contestant()

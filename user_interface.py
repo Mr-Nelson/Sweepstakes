@@ -21,7 +21,7 @@ class UserInterface:
     @staticmethod
     def display_contestant_info(contestants):
         print(f"There are {len(contestants)} contestants.")
-
+        print(f"{contestants}")
 
     @staticmethod
     def display_sweepstakes_info(sweepstakes_name, contestants):
