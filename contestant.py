@@ -9,6 +9,6 @@ class Contestant:
     def notify(self, is_winner):
         is_winner = False
         if is_winner:
-            pass
+            ("Sorry you have not won this sweepstakes.")
         else:
-            pass
+            ("Congratulations! You have won the sweepstakes!")
